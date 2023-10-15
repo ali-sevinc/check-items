@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ChangeEvent } from "react";
 
 import CheckItem from "./CheckItem";
 import { CheckItemType } from "./Check";
@@ -18,26 +19,47 @@ const StyledCheckList = styled.ul`
   }
 `;
 
+const Sort = styled.div`
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+`;
+
 function CheckList({
   checkItems,
   onRemoveItem,
   onToggleCheck,
+  onChange,
+  sortValue,
 }: {
   checkItems: CheckItemType[];
   onRemoveItem: (id: string) => void;
   onToggleCheck: (id: string) => void;
+  onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+  sortValue: string;
 }) {
   return (
-    <StyledCheckList>
-      {checkItems.map((item) => (
-        <CheckItem
-          onToggleCheck={onToggleCheck}
-          onRemoveItem={onRemoveItem}
-          key={item.id}
-          checkItem={item}
-        />
-      ))}
-    </StyledCheckList>
+    <div>
+      <Sort>
+        <label>Sort by: </label>
+        <select value={sortValue} onChange={onChange}>
+          <option value="default">Default</option>
+          <option value="packed">Packed</option>
+          <option value="amount">Amount</option>
+          <option value="a-to-z">A to Z</option>
+        </select>
+      </Sort>
+      <StyledCheckList>
+        {checkItems.map((item) => (
+          <CheckItem
+            onToggleCheck={onToggleCheck}
+            onRemoveItem={onRemoveItem}
+            key={item.id}
+            checkItem={item}
+          />
+        ))}
+      </StyledCheckList>
+    </div>
   );
 }
 

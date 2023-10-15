@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyles />
       <Head>
-        <meta name="viewport" content="width=device, initial-sclae=1" />
+        <meta name="viewport" content="width=device, initial-scale=1" />
       </Head>
       <MainContainer>
         <MainHeader />

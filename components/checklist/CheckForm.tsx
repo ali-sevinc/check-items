@@ -47,7 +47,7 @@ function CheckForm({
     const item = {
       id: crypto.randomUUID(),
       text: values.text,
-      amount: values.amount,
+      amount: Number(values.amount),
       isChecked: false,
     };
     onAddItem(item);

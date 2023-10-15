@@ -42,7 +42,9 @@ function CheckItem({
   return (
     <StyledCheckItem $isItemChecked={isChecked}>
       <input onChange={handleChange} type="checkbox" checked={isChecked} />{" "}
-      <span>{checkItem.text}</span>{" "}
+      <p>
+        <span>{checkItem.amount}</span> x <span>{checkItem.text}</span>
+      </p>
       <button onClick={() => onRemoveItem(checkItem.id)}>
         {isChecked ? <>&#10003;</> : "X"}
       </button>
