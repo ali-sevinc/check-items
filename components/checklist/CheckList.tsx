@@ -10,7 +10,7 @@ const StyledCheckList = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   margin: 1rem auto;
   gap: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 8rem;
   @media (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
   }

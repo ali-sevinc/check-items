@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   background-color: var(--color-orange-500);
-
   padding: 1rem 4rem;
   height: 5rem;
   justify-content: space-between;
@@ -11,7 +10,7 @@ const StyledFooter = styled.footer`
   @media (max-width: 900px) {
     font-size: 1.2rem;
     flex-direction: column;
-    height: 8rem;
+    height: 6rem;
   }
 `;
 
