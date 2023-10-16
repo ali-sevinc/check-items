@@ -46,25 +46,14 @@ function Check() {
 
   let sortedData = [...checks];
 
-  if (sort === "packed") {
-    sortedData?.sort((a, b) => {
-      if (!a.isChecked && b.isChecked) {
-        return -1;
-      } else if (a.isChecked && !b.isChecked) {
-        return 1;
-      }
-      return 0;
-    });
+  if (sort === "checked") {
+    sortedData.sort((a, b) => Number(a.isChecked) - Number(b.isChecked));
   }
   if (sort === "a-to-z") {
-    sortedData.sort((a, b) => {
-      return a.text.localeCompare(b.text);
-    });
+    sortedData.sort((a, b) => a.text.localeCompare(b.text));
   }
   if (sort === "amount") {
-    sortedData.sort((a, b) => {
-      return a.amount - b.amount;
-    });
+    sortedData.sort((a, b) => a.amount - b.amount);
   }
 
   return (

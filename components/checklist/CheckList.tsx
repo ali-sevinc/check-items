@@ -63,7 +63,7 @@ function CheckList({
           <label>Sort by: </label>
           <select value={sortValue} onChange={onChange}>
             <option value="default">Default</option>
-            <option value="packed">Packed</option>
+            <option value="checked">Checked</option>
             <option value="amount">Amount</option>
             <option value="a-to-z">A to Z</option>
           </select>

@@ -35,12 +35,15 @@ function CheckStats({ checkItems }: { checkItems: CheckItemType[] }) {
   return (
     <StyledCheckStats>
       {itemNum === 0 && <p>No check item found.</p>}
-      {itemNum > 0 && (
-        <p>
-          <Span>{checedNum}</Span> item(s) of <Span>{itemNum}</Span> are checked
-          (<Span>{checkedPercent}%</Span>)
-        </p>
-      )}
+      {itemNum > 0 &&
+        (checkedPercent === 100 ? (
+          <p>All items checked.</p>
+        ) : (
+          <p>
+            <Span>{checedNum}</Span> item(s) of <Span>{itemNum}</Span> are
+            checked (<Span>{checkedPercent}%</Span>)
+          </p>
+        ))}
     </StyledCheckStats>
   );
 }
