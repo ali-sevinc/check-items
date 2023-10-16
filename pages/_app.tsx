@@ -11,16 +11,17 @@ import Head from "next/head";
 const kalam = Kalam({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
+  variable: "--font-kalam",
 });
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-`;
-
-const Main = styled.main`
-  flex-grow: 1;
+  main {
+    font-family: var(--font-kalam);
+    flex-grow: 1;
+  }
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -28,14 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyles />
       <Head>
-        <meta name="viewport" content="width=device, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <MainContainer>
         <MainHeader />
-        <Main className={`${kalam.className}`}>
+        <main className={kalam.variable}>
           <Component {...pageProps} />
-        </Main>
-        <Footer font={kalam.className} />
+        </main>
+        <Footer font={kalam.variable} />
       </MainContainer>
     </>
   );

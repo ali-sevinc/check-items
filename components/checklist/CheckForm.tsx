@@ -10,9 +10,9 @@ const Container = styled.div`
 `;
 const StyledCheckForm = styled.form`
   display: flex;
-  gap: 1rem;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   max-width: 35rem;
   margin: 0 auto;
   padding: 2rem 0;
@@ -24,21 +24,23 @@ const StyledCheckForm = styled.form`
   }
 `;
 const TextContainer = styled.div`
-  display: block;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
   @media (max-width: 900px) {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
 `;
 
 const AmountContainer = styled.div`
-  text-align: center;
+  text-align: start;
   select {
     width: 90%;
-    text-align: center;
     height: 40px;
     padding: 0.2rem 0;
+  }
+  @media (max-width: 900px) {
+    text-align: center;
   }
 `;
 

@@ -40,6 +40,10 @@ function Check() {
     setSort(event.target.value);
   }
 
+  function handleClearList() {
+    setChecks([]);
+  }
+
   let sortedData = [...checks];
 
   if (sort === "packed") {
@@ -67,6 +71,7 @@ function Check() {
     <StyledCheck>
       <CheckForm onAddItem={handleAddItem} />
       <CheckList
+        onClear={handleClearList}
         onChange={handleChangeSort}
         sortValue={sort}
         onToggleCheck={handleToggleCheck}

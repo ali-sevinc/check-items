@@ -24,6 +24,20 @@ const Sort = styled.div`
   text-align: center;
   margin: 0 auto;
   padding: 0.5rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1rem;
+  button {
+    background-color: var(--color-orange-300);
+    border: none;
+    height: 43px;
+    padding: 0.2rem 0.5rem;
+    transition: background-color 0.2s;
+  }
+  button:hover {
+    background-color: var(--color-orange-500);
+  }
 `;
 
 function CheckList({
@@ -32,23 +46,28 @@ function CheckList({
   onToggleCheck,
   onChange,
   sortValue,
+  onClear,
 }: {
   checkItems: CheckItemType[];
   onRemoveItem: (id: string) => void;
   onToggleCheck: (id: string) => void;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   sortValue: string;
+  onClear: () => void;
 }) {
   return (
     <div>
       <Sort>
-        <label>Sort by: </label>
-        <select value={sortValue} onChange={onChange}>
-          <option value="default">Default</option>
-          <option value="packed">Packed</option>
-          <option value="amount">Amount</option>
-          <option value="a-to-z">A to Z</option>
-        </select>
+        <div>
+          <label>Sort by: </label>
+          <select value={sortValue} onChange={onChange}>
+            <option value="default">Default</option>
+            <option value="packed">Packed</option>
+            <option value="amount">Amount</option>
+            <option value="a-to-z">A to Z</option>
+          </select>
+        </div>
+        <button>Clear</button>
       </Sort>
       <StyledCheckList>
         {checkItems.map((item) => (

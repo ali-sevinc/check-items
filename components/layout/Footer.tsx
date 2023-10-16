@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   background-color: var(--color-orange-500);
+  font-family: var(--font-kalam);
+
   padding: 1rem 4rem;
   height: 5rem;
   justify-content: space-between;
