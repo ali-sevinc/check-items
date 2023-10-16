@@ -67,7 +67,7 @@ function CheckList({
             <option value="a-to-z">A to Z</option>
           </select>
         </div>
-        <button>Clear</button>
+        <button onClick={onClear}>Clear list</button>
       </Sort>
       <StyledCheckList>
         {checkItems.map((item) => (
