@@ -23,6 +23,7 @@ const Sort = styled.div`
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  padding: 0.5rem 0;
 `;
 
 function CheckList({

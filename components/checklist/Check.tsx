@@ -44,9 +44,9 @@ function Check() {
 
   if (sort === "packed") {
     sortedData?.sort((a, b) => {
-      if (a.isChecked && !b.isChecked) {
+      if (!a.isChecked && b.isChecked) {
         return -1;
-      } else if (!a.isChecked && b.isChecked) {
+      } else if (a.isChecked && !b.isChecked) {
         return 1;
       }
       return 0;

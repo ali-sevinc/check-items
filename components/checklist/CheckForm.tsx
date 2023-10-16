@@ -10,6 +10,7 @@ const Container = styled.div`
 `;
 const StyledCheckForm = styled.form`
   display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
   max-width: 35rem;
@@ -19,7 +20,7 @@ const StyledCheckForm = styled.form`
   @media (max-width: 900px) {
     flex-direction: column;
     padding: 0.5rem 0;
-    height: 10rem;
+    height: 12rem;
   }
 `;
 const TextContainer = styled.div`
@@ -28,6 +29,16 @@ const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+`;
+
+const AmountContainer = styled.div`
+  text-align: center;
+  select {
+    width: 90%;
+    text-align: center;
+    height: 40px;
+    padding: 0.2rem 0;
   }
 `;
 
@@ -63,8 +74,8 @@ function CheckForm({
   return (
     <Container>
       <StyledCheckForm onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="amount">Amount: </label>
+        <AmountContainer>
+          <label htmlFor="amount">Amount</label>
           <select
             value={values.amount}
             onChange={handleChange}
@@ -77,9 +88,9 @@ function CheckForm({
               </option>
             ))}
           </select>
-        </div>
+        </AmountContainer>
         <TextContainer>
-          <label htmlFor="item">Check item: </label>
+          <label htmlFor="item">Check item</label>
           <input
             value={values.text}
             onChange={handleChange}
