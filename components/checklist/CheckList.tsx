@@ -29,8 +29,9 @@ const Sort = styled.div`
   justify-content: center;
   gap: 1rem;
   button {
-    background-color: var(--color-orange-300);
-    border: none;
+    border: 1px solid black;
+    background-color: white;
+
     height: 43px;
     padding: 0.2rem 0.5rem;
     transition: background-color 0.2s;
